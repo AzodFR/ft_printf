@@ -64,11 +64,15 @@ all:	${NAME}
 
 clean:
 		@${RM} ${OBJS} ${BONUS}
-		@printf "\033[31mDeleting\033[0m >>\033[31m \033[1mall .o files\n\033[0m"
+		@printf "\033[31mDeleting\033[0m >>\033[31m \033[1mall libft .o files\n\033[0m"
 		
 fclean: clean
 		@${RM} ${NAME}
-		@printf "\033[31mDeleting\033[0m >>\033[31m \033[1mlibft.a\n\033[0m\n"
+		@printf "\033[31mDeleting\033[0m >>\033[31m \033[1mlibft.a\n\033[0m"
+
+lclean: 
+	@${RM} ${NAME}
+	@printf "\033[31mDeleting\033[0m >>\033[31m \033[1mlibft.a\n\033[0m"
 
 re: fclean all
 
