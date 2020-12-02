@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   prepare_string.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 15:51:34 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/02 12:49:24 by thjacque         ###   ########lyon.fr   */
+/*   Created: 2020/12/02 11:40:39 by thjacque          #+#    #+#             */
+/*   Updated: 2020/12/02 16:47:56 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+void		prepare_string(const char *format, va_list ap, int *ret)
 {
-	int		ret;
-	va_list ap;
+	int		i;
 
-	ret = 0;
-	va_start(ap,format);
-	if (!read_format(format, ap))
-		return (print_direct(format));
-	//prepare_string(format, ap, &ret);
-	va_end(ap);
-	return (ret);
+	i = -1;
+	while (format[++i])
+	{
+		if (format[i] == '%')
+			i = convert(format, ap, i, ret);
+		else
+		{
+			ft_putstr_fd((char *)&format[i], 1);
+			*ret += 1;
+		}
+	}
 }

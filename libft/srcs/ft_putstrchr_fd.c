@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putstrchr_fd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 15:51:34 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/02 12:49:24 by thjacque         ###   ########lyon.fr   */
+/*   Created: 2020/12/02 11:45:34 by thjacque          #+#    #+#             */
+/*   Updated: 2020/12/02 12:18:02 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+void	ft_putstrchr_fd(char *s, char c, int fd)
 {
-	int		ret;
-	va_list ap;
-
-	ret = 0;
-	va_start(ap,format);
-	if (!read_format(format, ap))
-		return (print_direct(format));
-	//prepare_string(format, ap, &ret);
-	va_end(ap);
-	return (ret);
+	if (fd < 0 || !s)
+		return ;
+	while(*s)
+	{
+		if (*s == c)
+			return;
+		write(fd, &(*s), 1);
+		s++;
+	}
 }

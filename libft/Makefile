@@ -26,7 +26,8 @@ FILES = ft_atoi.c ft_isalpha.c \
 		ft_itoa.c ft_strmapi.c \
 		ft_bzero.c \
 		ft_putchar_fd.c ft_putstr_fd.c \
-		ft_putendl_fd.c ft_putnbr_fd.c
+		ft_putendl_fd.c ft_putnbr_fd.c \
+		ft_putstrchr_fd.c
 
 BONUS_FILES =	ft_lstnew.c ft_lstadd_front.c \
 				ft_lstsize.c ft_lstlast.c \
@@ -51,13 +52,13 @@ CFLAGS = -Wall -Wextra -Werror
 
 ${NAME}: ${OBJS}
 		@ar rcs ${NAME} ${OBJS}
-		@printf "\n\033[1m\033[4m\033[32mlibft.a \033[1m\033[32mgenerated !\n\n\033[0m\033[24m"
+		@printf "\n\033[1m\033[32mlibft.a \033[1m\033[32mgenerated !\n\n\033[0m"
 		
 
 
 bonus : ${NAME} ${BONUS}
 		@ar rcs ${NAME} ${BONUS}
-		@printf "\033[1m\033[4m\033[32mBONUS ADDED !\n\033[0m\033[24m"
+		@printf "\033[1m\033[32mBONUS ADDED !\n\033[0m"
 		
 
 all:	${NAME}

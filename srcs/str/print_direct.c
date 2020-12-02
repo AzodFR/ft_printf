@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_direct.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 15:51:34 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/02 12:49:24 by thjacque         ###   ########lyon.fr   */
+/*   Created: 2020/12/02 10:41:59 by thjacque          #+#    #+#             */
+/*   Updated: 2020/12/02 10:47:12 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+int		print_direct(const char *format)
 {
 	int		ret;
-	va_list ap;
 
-	ret = 0;
-	va_start(ap,format);
-	if (!read_format(format, ap))
-		return (print_direct(format));
-	//prepare_string(format, ap, &ret);
-	va_end(ap);
+	ret = ft_strlen(format);
+	write(1, format, ret);
 	return (ret);
 }

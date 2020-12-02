@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   initstruct.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 15:51:34 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/02 12:49:24 by thjacque         ###   ########lyon.fr   */
+/*   Created: 2020/12/02 10:30:10 by thjacque          #+#    #+#             */
+/*   Updated: 2020/12/02 16:49:21 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+t_flags		initstruct(const char *f, int start, char type)
 {
-	int		ret;
-	va_list ap;
+	t_flags		elem;
 
-	ret = 0;
-	va_start(ap,format);
-	if (!read_format(format, ap))
-		return (print_direct(format));
-	//prepare_string(format, ap, &ret);
-	va_end(ap);
-	return (ret);
+	elem.minus = get_minus(f, start, type);
+	elem.zer = get_zero(f, start, type);
+	elem.zer_len = elem.zer ? get_len(f, elem.zer) : 0;
+	elem.dot = get_dot(f, start, type);
+	elem.dot_len = elem.dot ? get_len(f, elem.dot) : 0;
+	elem.nor = 0;
+	elem.nor_len = 0;
+	return (elem);
 }

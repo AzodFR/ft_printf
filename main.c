@@ -6,7 +6,7 @@
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 16:51:36 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/01 16:59:25 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/02 12:47:08 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 int main(void)
 {
-    printf("Salut");
+	//int		ret;
+    
+	/*printf("ft_printf:\n");
+	ret = ft_printf("salut a tous\n");
+	printf("taille retourné : %d\n\n", ret);
+	printf("printf:\n");
+	ret = printf("salut a tous\n");
+	printf("taille retourné : %d\n", ret);*/
+	printf("%08%\n");
     return (0);
 }
