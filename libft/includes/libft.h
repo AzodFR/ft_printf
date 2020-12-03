@@ -6,7 +6,7 @@
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:05:23 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/02 12:27:01 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 15:40:48 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t				ft_strlcat(char *dst, char *src, size_t size);
 size_t				ft_strlcpy(char *dst, char *src, size_t size);
 size_t				ft_strlen(const char *s);
+int					ft_digitlen(int n);
 char				*ft_strchr(const char *s, char c);
 char				*ft_strnstr(const char *haystack, const char *needle,
 								size_t len);
@@ -52,11 +53,17 @@ char				*ft_itoa(int n);
 char				**ft_split(char const *s, char c);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/*	FT_PUT */
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
+int					ft_putstr_len(char *str);
+int					ft_putchar_len(char c);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstrchr_fd(char *s, char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
+
+/*	LIST */
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);

@@ -16,9 +16,11 @@ HEADERS = ft_printf.h
 FILES = ft_printf.c \
 		str/print_direct.c str/read_format.c \
 		str/prepare_string.c \
-		struct/initstruct.c \
-		flags/get_numb.c \
-		converter/convert.c
+		struct/initstruct.c  struct/prepare_flags.c \
+		struct/set_flags.c \
+		converter/convert.c converter/convert_c.c \
+		converter/convert_s.c converter/convert_d_i.c \
+		converter/convert_perc.c
 
 OBJS = $(OBJ:.c=.o)
 

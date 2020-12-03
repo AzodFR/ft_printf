@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_digitlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 15:51:34 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 09:33:11 by thjacque         ###   ########lyon.fr   */
+/*   Created: 2020/12/03 15:35:02 by thjacque          #+#    #+#             */
+/*   Updated: 2020/12/03 15:35:36 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+int		ft_digitlen(int n)
 {
-	int		ret;
-	va_list ap;
+	unsigned int	nb;
+	int				i;
 
-	ret = 0;
-	va_start(ap,format);
-	if (!read_format(format, ap))
-		return (print_direct(format));
-	ret = prepare_string(format, ap);
-	va_end(ap);
-	return (ret);
+	i = 1;
+	nb = n;
+	if (n < 0)
+	{
+		i = 2;
+		nb = -n;
+	}
+	while (nb > 9)
+	{
+		nb /= 10;
+		i++;
+	}
+	return (i);
 }

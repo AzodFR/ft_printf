@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   convert_c.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 15:51:34 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 09:33:11 by thjacque         ###   ########lyon.fr   */
+/*   Created: 2020/12/03 12:47:34 by thjacque          #+#    #+#             */
+/*   Updated: 2020/12/03 14:24:29 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+int		convert_c(va_list ap, t_flags flags)
 {
-	int		ret;
-	va_list ap;
+	int ret;
 
-	ret = 0;
-	va_start(ap,format);
-	if (!read_format(format, ap))
-		return (print_direct(format));
-	ret = prepare_string(format, ap);
-	va_end(ap);
-	return (ret);
+	ret = flags.len;
+	if (!flags.minus && ret)
+		while (--ret)
+			ft_putchar_fd(' ', 1);
+	ft_putchar_fd(va_arg(ap, int), 1);
+	if (flags.minus && ret)
+		while (--ret)
+			ft_putchar_fd(' ', 1);
+	return (flags.len ? flags.len : 1);
 }

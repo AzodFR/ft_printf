@@ -6,7 +6,7 @@
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 15:48:49 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/02 16:49:30 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 15:40:03 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,38 @@
 typedef struct		s_flags
 {
 	int		minus;
-	int		zer;
-	int		zer_len;
+	int		zero;
 	int		dot;
-	int		dot_len;
-	int		nor;
-	int		nor_len;
+	int		star;
+	int		len;
+	char	type;
 }					t_flags;
 
-/*	GET NUMBER IN FLAGS */
-int		get_len(const char *f, int start);
-int		get_dot(const char *f, int start, char type);
-int		get_minus(const char *f, int start, char type);
-int		get_zero(const char *f, int start, char type);
+/*	READ FLAGS */
+int			is_a_converter(char c);
+t_flags		prepare_flags(const char *format, va_list ap, int *i);
+int			set_dot(const char *f, t_flags *flags, int i, va_list ap);
+int			set_star(t_flags *flags, int i, va_list ap);
+int			set_minus(t_flags *flags, int i);
+int			set_zero(t_flags *flags, int i);
+int			set_len(const char f, t_flags *flags, int i);
 
 /*	PREPARING THE CONVERTION */
-void		prepare_string(const char *format, va_list ap, int *ret);
-t_flags		initstruct(const char *f, int start, char c);
-int			convert(const char *format, va_list ap, int start, int *ret);
+int			prepare_string(const char *format, va_list ap);
+t_flags		initstruct(void);
 
-/*	PRINT WITHOUT CONVERSION */
+/*	CONVERT */
+int		haveflags(t_flags flags);
+int		convert(va_list ap, int i, t_flags flags);
+int		convert_c(va_list ap, t_flags flags);
+int		convert_s(va_list ap, t_flags flags);
+int		convert_d_i(va_list ap, t_flags flags);
+int		convert_perc(t_flags flags);
+
+/*	PRINT WITHOUT CONVERTION */
 int			print_direct(const char *format);
 
-
-/* KNOW IF THERE IS A CONVERSION */
+/* KNOW IF THERE IS A CONVERTION */
 int			read_format(const char *format, va_list ap);
 
 /*	PRINTF */

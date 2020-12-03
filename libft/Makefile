@@ -22,12 +22,13 @@ FILES = ft_atoi.c ft_isalpha.c \
 		ft_memmove.c ft_calloc.c \
 		ft_strdup.c ft_substr.c \
 		ft_strjoin.c ft_strtrim.c \
-		ft_split.c \
+		ft_split.c ft_digitlen.c \
 		ft_itoa.c ft_strmapi.c \
 		ft_bzero.c \
 		ft_putchar_fd.c ft_putstr_fd.c \
 		ft_putendl_fd.c ft_putnbr_fd.c \
-		ft_putstrchr_fd.c
+		ft_putstrchr_fd.c ft_putstr_len.c \
+		ft_putchar_len.c
 
 BONUS_FILES =	ft_lstnew.c ft_lstadd_front.c \
 				ft_lstsize.c ft_lstlast.c \
