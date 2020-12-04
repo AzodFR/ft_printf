@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 13:38:01 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 18:49:21 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 23:22:57 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ int		apply_whitespace(char *str, t_flags flags)
 	int		len;
 
 	i = 0;
-	len = ft_strlen(str);
+	len = ft_strlen(str) + (flags.type == 'p' ? 2 : 0);
 	ws = len ? flags.len - len : flags.len;
 	if (!flags.minus && ws > 0)
 		while (ws--)
 			i += ft_putchar_len(flags.zero ? '0' : ' ');
+	i += flags.type == 'p' ? ft_putstr_len("0x") : 0;
 	i += ft_putstr_len(str);
 	if (flags.minus && ws > 0)
 		while (ws--)

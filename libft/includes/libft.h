@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:05:23 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 18:13:32 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 23:05:17 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char				*ft_itoa_base(int	n, char *base);
 char				**ft_split(char const *s, char c);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char				*ft_ulltoa_base(unsigned long long ull, int base);
 
 /*	FT_PUT */
 void				ft_putchar_fd(char c, int fd);
