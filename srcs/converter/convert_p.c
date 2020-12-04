@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 19:41:19 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 22:23:34 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 22:31:26 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int		ft_printaddr(unsigned long addr)
 		c = ft_puthex((addr >> 4 * (16 - i - 1)) % 16);
 		if (start && c == '0')
 			continue;
+		if (!ft_isalnum(c))
+			break;
 		else
 		{
 			start = 0;
