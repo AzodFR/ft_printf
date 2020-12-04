@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:44:55 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 18:29:28 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 20:15:10 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int convert (va_list ap, int i, t_flags flags)
 		i = convert_xX(ap, flags, 1);
 	else if (flags.type == 'X')
 		i = convert_xX(ap, flags, 0);
-	/*else if (flags.type == 'p')*/
+	else if (flags.type == 'p')
+		i = convert_p(ap, flags);
 	else if (flags.type == '%')
 		i = convert_perc(flags);
 	return (i);

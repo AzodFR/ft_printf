@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 13:38:01 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 19:11:45 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 18:49:21 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int		apply_whitespace(char *str, t_flags flags)
 	ws = len ? flags.len - len : flags.len;
 	if (!flags.minus && ws > 0)
 		while (ws--)
-			i += ft_putstr_len(" ");
+			i += ft_putchar_len(flags.zero ? '0' : ' ');
 	i += ft_putstr_len(str);
 	if (flags.minus && ws > 0)
 		while (ws--)
-			i += ft_putstr_len(" ");
+			i += ft_putchar_len(flags.zero ? '0' : ' ');
 	return (i);
 }
 

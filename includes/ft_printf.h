@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 15:48:49 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 18:34:35 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 20:14:54 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int		convert_s(va_list ap, t_flags flags);
 int		convert_d_i(va_list ap, t_flags flags);
 int		convert_u(va_list ap, t_flags flags);
 int		convert_xX(va_list ap, t_flags flags, int small);
+int		convert_p(va_list ap, t_flags flags);
 int		convert_perc(t_flags flags);
 
 /*	PRINT WITHOUT CONVERTION */
