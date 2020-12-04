@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert_perc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 14:43:11 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 15:18:46 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:24:13 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		print_len(t_flags flags, int start)
 int		convert_perc(t_flags flags)
 {
 	int		ret;
+
 	ret = 0;
 	if (!haveflags(flags))
 		return (ft_putchar_len('%'));

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 15:51:34 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 09:33:11 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:12:46 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_printf(const char *format, ...)
 	va_list ap;
 
 	ret = 0;
-	va_start(ap,format);
+	va_start(ap, format);
 	if (!read_format(format, ap))
 		return (print_direct(format));
 	ret = prepare_string(format, ap);

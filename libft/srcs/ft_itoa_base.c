@@ -6,12 +6,11 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:05:06 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 20:02:35 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:10:38 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_revstr(char *str)
 {
@@ -62,7 +61,7 @@ char	*convert_negative(char *res, char *base, unsigned int n)
 	return (ft_revstr(res));
 }
 
-char	*ft_itoa_base(int	n, char *base)
+char	*ft_itoa_base(int n, char *base)
 {
 	char			*res;
 
@@ -71,7 +70,7 @@ char	*ft_itoa_base(int	n, char *base)
 	if (n == 0)
 	{
 		res[0] = '0';
-		res[1]= 0;
+		res[1] = 0;
 		return (res);
 	}
 	else if (n > 0)

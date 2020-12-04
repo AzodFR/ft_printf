@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 19:41:19 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 23:21:52 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:00:06 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int		convert_p(va_list ap, t_flags flags)
 	str = ft_ulltoa_base(addr, 16);
 	ret = 0;
 	if (!haveflags(flags))
-		return (ft_putstr_len(str));
+	{
+		ret += ft_putstr_len("0x");
+		return (ret += ft_putstr_len(str));
+	}
 	if (flags.len)
 		ret += apply_whitespace(str, flags);
 	else

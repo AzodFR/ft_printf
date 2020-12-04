@@ -6,12 +6,11 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 22:56:43 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 23:13:51 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:10:55 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*convert_ull(unsigned long long ull, int base, char *str, int i)
 {

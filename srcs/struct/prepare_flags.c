@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prepare_flags.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 09:46:08 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 01:14:51 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:12:27 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_flags		prepare_flags(const char *format, va_list ap, int *i)
 	while (!is_a_converter(format[j]))
 	{
 		if (format[j] == '.')
-			j = set_dot(format, &flags, j ,ap);
+			j = set_dot(format, &flags, j, ap);
 		if (format[j] == '*')
 			j = set_star(&flags, j, ap);
 		if (format[j] == '-')

@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:44:55 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 20:15:10 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:15:28 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		is_a_converter(char c)
 			c == '%');
 }
 
-int convert (va_list ap, int i, t_flags flags)
+int		convert(va_list ap, int i, t_flags flags)
 {
 	if (flags.type == 'c')
 		i = convert_c(ap, flags);

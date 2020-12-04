@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prepare_string.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:40:39 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 15:28:48 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:13:24 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		prepare_string(const char *format, va_list ap)
 	while (1)
 	{
 		if (!format[i])
-			break;
+			break ;
 		if (format[i] == '%')
 		{
 			i++;

@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   convert_d_i.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 15:36:46 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 02:18:16 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:23:25 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int		ft_before_after(t_flags flags, int ws, int ret, int numb)
+{
+	if (!flags.minus)
+	{
+		while (ws--)
+			ret += ft_putchar_len(' ');
+		if (numb < 0)
+			ft_putchar_len('-');
+	}
+	if (flags.minus)
+		while (ws--)
+			ret += ft_putchar_len(' ');
+	return (ret);
+}
 
 int		ft_cancer(t_flags flags, int numb)
 {
@@ -22,18 +37,12 @@ int		ft_cancer(t_flags flags, int numb)
 	ret = 0;
 	a = ft_digitlen(numb) - (numb < 0);
 	if (flags.zero && flags.dot == -1)
-		zeros = flags.len - a - (numb < 0) > 0 ? flags.len - a - (numb < 0): 0;
+		zeros = flags.len - a - (numb < 0) > 0 ? flags.len - a - (numb < 0) : 0;
 	else
 		zeros = flags.dot - a > 0 ? flags.dot - a : 0;
 	ws = flags.len - (zeros + a) - (numb < 0);
 	ws = ws > 0 ? ws : 0;
-	if (!flags.minus)
-	{
-		while (ws--)
-			ret += ft_putchar_len(' ');
-		if (numb < 0)
-			ft_putchar_len('-');
-	}
+	ret += ft_before_after(flags, ws, ret, numb);
 	if (flags.minus && numb < 0)
 		ft_putchar_len('-');
 	while (zeros--)
@@ -42,9 +51,7 @@ int		ft_cancer(t_flags flags, int numb)
 		ft_putunbr_fd(-numb, 1);
 	else
 		ft_putnbr_fd(numb < 0 ? -numb : numb, 1);
-	if (flags.minus)
-		while (ws--)
-			ret+= ft_putchar_len(' ');
+	ret += ft_before_after(flags, ws, ret, numb);
 	return (ret);
 }
 

@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:05:23 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 23:05:17 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:11:05 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_ulltoa_base(unsigned long long ull, int base);
 
-/*	FT_PUT */
+
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 int					ft_putstr_len(char *str);
@@ -67,7 +67,7 @@ void				ft_putunbr_fd(unsigned int n, int fd);
 void				ft_putstrchr_fd(char *s, char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
 
-/*	LIST */
+
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);

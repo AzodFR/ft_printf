@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 13:38:01 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 23:22:57 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:26:30 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	*apply_precision(char *str, int i)
 		str[i] = 0;
 	return (str);
 }
+
 int		convert_s(va_list ap, t_flags flags)
 {
 	int		ret;

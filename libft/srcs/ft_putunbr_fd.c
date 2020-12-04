@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putunbr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 21:56:23 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 19:48:20 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:09:54 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_putunbr_fd(unsigned int n, int fd)
 {
 	unsigned int	base;
+
 	base = n;
 	if (base >= 10)
 		ft_putunbr_fd(base / 10, fd);
