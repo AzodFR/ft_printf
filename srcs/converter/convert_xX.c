@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:24:46 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 22:15:49 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 22:41:33 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,29 @@
 
 int		apply_xwhitespace(char *str, t_flags flags)
 {
-	int		i;
+	int		ret;
 	int		ws;
-	int		len;
+	int		a;
 	int		zeros;
 
-	i = 0;
-	len = ft_strlen(str);
-	ws = 0;
-	zeros = 0;
-	if (flags.zero || flags.dot)
-		zeros = len ? flags.dot - len : flags.dot;
-	ws = len ? flags.len - len - (zeros > 0 ? zeros : 0) : flags.len - zeros;
+	ret = 0;
+	a = ft_strlen(str);
+	if (flags.zero && flags.dot == -1)
+		zeros = flags.len - a  > 0 ? flags.len - a: 0;
+	else
+		zeros = flags.dot - a > 0 ? flags.dot - a : 0;
+	ws = flags.len - (zeros + a);
+	ws = ws > 0 ? ws : 0;
 	if (!flags.minus)
-	{
-		while (ws-- > 0)
-			i += ft_putchar_len(flags.zero ? '0' : ' ');
-		while (zeros-- > 0)
-			i += ft_putchar_len('0');
-	}
-	i += ft_putstr_len(str);
+		while (ws--)
+			ret += ft_putchar_len(' ');
+	while (zeros--)
+		ret += ft_putchar_len('0');
+	ret += ft_putstr_len(str);
 	if (flags.minus)
-		while (ws-- > 0)
-			i += ft_putchar_len(flags.zero ? '0' : ' ');
-	return (i);
+		while (ws--)
+			ret+= ft_putchar_len(' ');
+	return (ret);
 }
 
 int		convert_xX(va_list ap, t_flags flags, int small)
