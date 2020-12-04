@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 15:48:49 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 17:32:53 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 18:34:35 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int			set_len(const char f, t_flags *flags, int i);
 
 /*	PREPARING THE CONVERTION */
 int			prepare_string(const char *format, va_list ap);
+int			apply_whitespace(char *str, t_flags flags);
 t_flags		initstruct(void);
 
 /*	CONVERT */
@@ -46,6 +47,7 @@ int		convert_c(va_list ap, t_flags flags);
 int		convert_s(va_list ap, t_flags flags);
 int		convert_d_i(va_list ap, t_flags flags);
 int		convert_u(va_list ap, t_flags flags);
+int		convert_xX(va_list ap, t_flags flags, int small);
 int		convert_perc(t_flags flags);
 
 /*	PRINT WITHOUT CONVERTION */
