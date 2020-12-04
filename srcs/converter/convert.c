@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:44:55 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 18:32:45 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 17:33:30 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ int convert (va_list ap, int i, t_flags flags)
 		i = convert_s(ap, flags);
 	else if (flags.type == 'd' || flags.type == 'i')
 		i = convert_d_i(ap, flags);
-	/*else if (flags.type == 'p')
 	else if (flags.type == 'u')
+		i = convert_u(ap, flags);
+	/*else if (flags.type == 'p')
 	else if (flags.type == 'x')
 	else if (flags.type == 'X')*/
 	else if (flags.type == '%')

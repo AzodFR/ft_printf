@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:05:23 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 19:48:05 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 17:36:09 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ size_t				ft_strlcat(char *dst, char *src, size_t size);
 size_t				ft_strlcpy(char *dst, char *src, size_t size);
 size_t				ft_strlen(const char *s);
 int					ft_digitlen(int n);
+int					ft_udigitlen(unsigned int n);
 char				*ft_strchr(const char *s, char c);
 char				*ft_strnstr(const char *haystack, const char *needle,
 								size_t len);

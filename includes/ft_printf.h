@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 15:48:49 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 15:40:03 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 17:32:53 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int		convert(va_list ap, int i, t_flags flags);
 int		convert_c(va_list ap, t_flags flags);
 int		convert_s(va_list ap, t_flags flags);
 int		convert_d_i(va_list ap, t_flags flags);
+int		convert_u(va_list ap, t_flags flags);
 int		convert_perc(t_flags flags);
 
 /*	PRINT WITHOUT CONVERTION */

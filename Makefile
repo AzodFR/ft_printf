@@ -20,7 +20,7 @@ FILES = ft_printf.c \
 		struct/set_flags.c \
 		converter/convert.c converter/convert_c.c \
 		converter/convert_s.c converter/convert_d_i.c \
-		converter/convert_perc.c
+		converter/convert_perc.c converter/convert_u.c
 
 OBJS = $(OBJ:.c=.o)
 
@@ -36,7 +36,7 @@ all: $(NAME)
 $(LIBFT): $(INCLUDES) libft/includes/libft.h
 		@make -C libft/
 
-$(NAME): ${OBJS} $(LIBFT) 
+$(NAME): ${OBJS} $(LIBFT)
 		@ar rcs libft/$(LIBFT) ${OBJS}
 		@cp libft/$(LIBFT) $(NAME)
 		@printf "\n\033[1m\033[32mlibftprintf.a \033[1m\033[32mgenerated !\n\n\033[0m"

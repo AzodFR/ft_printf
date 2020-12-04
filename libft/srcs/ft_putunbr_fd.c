@@ -15,14 +15,7 @@
 void	ft_putunbr_fd(unsigned int n, int fd)
 {
 	unsigned int	base;
-
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		base = -n;
-	}
-	else
-		base = n;
+	base = n;
 	if (base >= 10)
 		ft_putunbr_fd(base / 10, fd);
 	n = base % 10 + '0';
