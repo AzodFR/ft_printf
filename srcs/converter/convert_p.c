@@ -6,26 +6,39 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 19:41:19 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 20:32:07 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 22:23:34 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_puthex(unsigned char c)
+char	ft_puthex(unsigned char c)
 {
-	return (ft_putchar_len((c > 9) ? 'a' + c - 10 : 48 + c));
+	return ((c > 9) ? 'a' + c - 10 : 48 + c);
 }
 
 int		ft_printaddr(unsigned long addr)
 {
-	int		i;
-	int		ret;
+	int				i;
+	int				ret;
+	int				start;
+	char			c;
 
 	i = 3;
 	ret = ft_putstr_len("0x");
+	start = 1;
 	while (++i < 16)
-		ret += ft_puthex((addr >> 4 * (16 - i - 1)) % 16);
+	{
+		c = ft_puthex((addr >> 4 * (16 - i - 1)) % 16);
+		if (start && c == '0')
+			continue;
+		else
+		{
+			start = 0;
+			ret += ft_putchar_len(c);
+		}
+
+	}
 	return (ret);
 }
 

@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:24:46 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 22:06:53 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 22:15:49 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ int		apply_xwhitespace(char *str, t_flags flags)
 	len = ft_strlen(str);
 	ws = 0;
 	zeros = 0;
-	zeros = len ? flags.dot - len : flags.dot;
-	ws = len ? flags.len - len - zeros : flags.len - zeros;
+	if (flags.zero || flags.dot)
+		zeros = len ? flags.dot - len : flags.dot;
+	ws = len ? flags.len - len - (zeros > 0 ? zeros : 0) : flags.len - zeros;
 	if (!flags.minus)
 	{
 		while (ws-- > 0)
@@ -36,7 +37,7 @@ int		apply_xwhitespace(char *str, t_flags flags)
 	i += ft_putstr_len(str);
 	if (flags.minus)
 		while (ws-- > 0)
-			i += ft_putchar_len(flags.zero ? '0' : flags.dot ? '0' : ' ');
+			i += ft_putchar_len(flags.zero ? '0' : ' ');
 	return (i);
 }
 
