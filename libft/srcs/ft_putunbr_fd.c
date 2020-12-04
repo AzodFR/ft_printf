@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putunbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 16:51:36 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 02:11:28 by thjacque         ###   ########lyon.fr   */
+/*   Created: 2020/11/05 21:56:23 by thjacque          #+#    #+#             */
+/*   Updated: 2020/12/03 19:48:20 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <limits.h>
+#include "libft.h"
 
-int main(void)
+void	ft_putunbr_fd(unsigned int n, int fd)
 {
-	int		ret;
-	int ret2;
-    
+	unsigned int	base;
 
-	ret = ft_printf("%0*d", -10, 42);
-	printf("\n------------\n");
-	ret2 = printf("%0*d", -10, 42);
-	printf("\n------------\n");
-	printf("[%d] [%d]\n", ret, ret2);
-    return (0);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		base = -n;
+	}
+	else
+		base = n;
+	if (base >= 10)
+		ft_putunbr_fd(base / 10, fd);
+	n = base % 10 + '0';
+	ft_putchar_fd(n, fd);
 }

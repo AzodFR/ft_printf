@@ -6,7 +6,7 @@
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 13:38:01 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 19:03:14 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 19:11:45 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		convert_s(va_list ap, t_flags flags)
 	if (flags.len)
 		ret = apply_whitespace(str, flags);
 	else
-		return (ft_putstr_len(str));
+		ret = ft_putstr_len(str);
 	free(str);
 	return (ret);
 }

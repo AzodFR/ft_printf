@@ -46,14 +46,14 @@ main: $(NAME)
 	@clear
 	@printf "\n\033[1m\033[33ma.out ready, lauching...\n\n\033[0m"
 	@printf "\n\033[1m\033[32m#########################\n\033[0m"
-	@./a.out
+	@./a.out | cat -e
 	@printf "\033[1m\033[32m#########################\n\033[0m"
 
 test:
 	$(CC) test.c -o test.out
 	@printf "\n\033[1m\033[33mtest.out ready, lauching...\n\n\033[0m"
 	@printf "\n\033[1m\033[32m#########################\n\033[0m"
-	@./test.out
+	@./test.out | cat -e
 	@printf "\033[1m\033[32m#########################\n\033[0m"
 
 

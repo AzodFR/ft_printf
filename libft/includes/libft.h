@@ -6,7 +6,7 @@
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:05:23 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 15:40:48 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 19:48:05 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void				ft_putstr_fd(char *s, int fd);
 int					ft_putstr_len(char *str);
 int					ft_putchar_len(char c);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_putunbr_fd(unsigned int n, int fd);
 void				ft_putstrchr_fd(char *s, char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
 

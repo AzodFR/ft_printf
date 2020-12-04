@@ -6,15 +6,15 @@
 /*   By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 09:46:08 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/03 14:28:23 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 01:14:51 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			haveflags(t_flags flags)
+int			haveflags(t_flags f)
 {
-	return (flags.dot > -1 || flags.minus || flags.zero || flags.len || flags.star);
+	return (f.dot > -1 || f.minus || f.zero || f.len || f.star);
 }
 
 t_flags		prepare_flags(const char *format, va_list ap, int *i)
