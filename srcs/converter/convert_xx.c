@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 18:24:46 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/05 00:32:03 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/05 00:39:49 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		apply_xwhitespace(char *str, t_flags flags)
 	ret = 0;
 	a = ft_strlen(str);
 	if (flags.zero && flags.dot == -1)
-		zeros = flags.len - a  > 0 ? flags.len - a : 0;
+		zeros = flags.len - a > 0 ? flags.len - a : 0;
 	else
 		zeros = flags.dot - a > 0 ? flags.dot - a : 0;
 	ws = flags.len - (zeros + a);
@@ -40,7 +40,7 @@ int		apply_xwhitespace(char *str, t_flags flags)
 	return (ret);
 }
 
-int		convert_xX(va_list ap, t_flags flags, int small)
+int		convert_xx(va_list ap, t_flags flags, int small)
 {
 	int		numb;
 	char	*str;

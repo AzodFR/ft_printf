@@ -21,7 +21,7 @@ FILES = ft_printf.c \
 		converter/convert.c converter/convert_c.c \
 		converter/convert_s.c converter/convert_d_i.c \
 		converter/convert_perc.c converter/convert_u.c \
-		converter/convert_xX.c converter/convert_p.c
+		converter/convert_xx.c converter/convert_p.c
 
 OBJS = $(OBJ:.c=.o)
 
