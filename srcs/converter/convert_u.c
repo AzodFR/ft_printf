@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 15:36:46 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/04 17:36:18 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/04 21:50:45 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_ucancer(t_flags flags, unsigned int numb)
 			ret += ft_putchar_len(' ');
 	while (zeros--)
 		ret += ft_putchar_len('0');
-	ft_putunbr_fd(-numb, 1);
+	ft_putunbr_fd(numb, 1);
 	if (flags.minus)
 		while (ws--)
 			ret+= ft_putchar_len(' ');
