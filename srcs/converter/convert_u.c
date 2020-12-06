@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 15:36:46 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/05 00:29:49 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/06 16:56:03 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		convert_u(va_list ap, t_flags flags)
 	else if (flags.zero && flags.minus)
 	{
 		ft_putunbr_fd(numb, 1);
-		flags.len -= ft_digitlen(numb);
+		flags.len -= ft_udigitlen(numb);
 		while (0 < flags.len--)
 			ret += ft_putchar_len(' ');
 	}

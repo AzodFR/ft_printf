@@ -6,12 +6,11 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 15:36:46 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/06 12:44:36 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/06 17:29:08 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int		ft_before(int end, int *ws, int ret, int numb)
 {
@@ -61,10 +60,10 @@ int		ft_cancer(t_flags flags, int numb)
 		ft_putchar_len('-');
 	while (zeros--)
 		ret += ft_putchar_len('0');
-	if (numb < 0 && numb == -2147483648)
-		ft_putunbr_fd(-numb, 1);
+	if (numb < 0 && numb <= -2147483648)
+		ft_putunbr_fd(numb, 1);
 	else
-		ft_putnbr_fd(numb < 0 ? -numb : numb, 1);
+		ft_putnbr_fd(numb > 0 && numb <= 2147483647? numb : -numb, 1);
 	ret = ft_after(flags.minus, &ws, ret);
 	return (ret);
 }
@@ -86,7 +85,7 @@ int		convert_d_i(va_list ap, t_flags flags)
 		if (numb < 0 && numb == -2147483648)
 			ft_putunbr_fd(-numb, 1);
 		else
-			ft_putnbr_fd(numb < 0 ? -numb : numb, 1);
+			ft_putnbr_fd(numb, 1);
 		flags.len -= ft_digitlen(numb);
 		while (0 < flags.len--)
 			ret += ft_putchar_len(' ');
