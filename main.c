@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 16:51:36 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/05 01:07:30 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/06 13:20:48 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int main(void)
 	int		ret;
 	int ret2;
 
-	ret = ft_printf("%p", (void *)ULONG_MAX);
+	ret = ft_printf("%.2s",NULL);
 	printf("\n------------\n");
-	ret2 = printf("%p", (void *)ULONG_MAX);
+	ret2 = printf("%.2s", NULL);
 	printf("\n------------\n");
 	printf("[%d] [%d]\n", ret, ret2);
     return (0);

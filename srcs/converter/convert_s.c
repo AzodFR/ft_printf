@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 13:38:01 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/05 00:26:30 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/06 13:20:01 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,20 @@ int		convert_s(va_list ap, t_flags flags)
 {
 	int		ret;
 	char	*str;
+	char	*frst;
 
 	ret = 0;
+	frst = va_arg(ap, char*);
+	if (!frst)
+		str = ft_strdup("(null)");
+	else
+		str = ft_strdup(frst);
 	if (!haveflags(flags))
-		return (ft_putstr_len(va_arg(ap, char*)));
-	str = ft_strdup(va_arg(ap, char*));
+	{
+		ret += ft_putstr_len(str);
+		free(str);
+		return (ret);
+	}
 	str = apply_precision(str, flags.dot);
 	if (flags.len)
 		ret = apply_whitespace(str, flags);

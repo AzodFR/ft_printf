@@ -6,24 +6,38 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 15:36:46 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/05 00:23:25 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/06 12:44:36 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-int		ft_before_after(t_flags flags, int ws, int ret, int numb)
+int		ft_before(int end, int *ws, int ret, int numb)
 {
-	if (!flags.minus)
+	int		news;
+
+	news = *ws;
+	if (!end)
 	{
-		while (ws--)
+		while (news-- > 0)
 			ret += ft_putchar_len(' ');
 		if (numb < 0)
 			ft_putchar_len('-');
 	}
-	if (flags.minus)
-		while (ws--)
+	*ws = news;
+	return (ret);
+}
+
+int		ft_after(int end, int *ws, int ret)
+{
+	int		news;
+
+	news = *ws;
+	if (end)
+		while (news-- > 0)
 			ret += ft_putchar_len(' ');
+	*ws = news;
 	return (ret);
 }
 
@@ -42,7 +56,7 @@ int		ft_cancer(t_flags flags, int numb)
 		zeros = flags.dot - a > 0 ? flags.dot - a : 0;
 	ws = flags.len - (zeros + a) - (numb < 0);
 	ws = ws > 0 ? ws : 0;
-	ret += ft_before_after(flags, ws, ret, numb);
+	ret = ft_before(flags.minus, &ws, ret, numb);
 	if (flags.minus && numb < 0)
 		ft_putchar_len('-');
 	while (zeros--)
@@ -51,7 +65,7 @@ int		ft_cancer(t_flags flags, int numb)
 		ft_putunbr_fd(-numb, 1);
 	else
 		ft_putnbr_fd(numb < 0 ? -numb : numb, 1);
-	ret += ft_before_after(flags, ws, ret, numb);
+	ret = ft_after(flags.minus, &ws, ret);
 	return (ret);
 }
 
