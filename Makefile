@@ -43,7 +43,7 @@ $(NAME): ${OBJS} $(LIBFT)
 		@printf "\n\033[1m\033[32mlibftprintf.a \033[1m\033[32mgenerated !\n\n\033[0m"
 
 main: $(NAME)
-	@gcc main.c -lftprintf -L. -I${INC} 
+	@gcc main.c -lftprintf -L. -I${INC} -fsanitize=address
 	@clear
 	@printf "\n\033[1m\033[33ma.out ready, lauching...\n\n\033[0m"
 	@printf "\n\033[1m\033[32m#########################\n\033[0m"

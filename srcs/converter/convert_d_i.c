@@ -6,7 +6,7 @@
 /*   By: thjacque <marvin@r42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 15:36:46 by thjacque          #+#    #+#             */
-/*   Updated: 2020/12/06 17:29:08 by thjacque         ###   ########lyon.fr   */
+/*   Updated: 2020/12/07 02:22:57 by thjacque         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int		ft_cancer(t_flags flags, int numb)
 	if (numb < 0 && numb <= -2147483648)
 		ft_putunbr_fd(numb, 1);
 	else
-		ft_putnbr_fd(numb > 0 && numb <= 2147483647? numb : -numb, 1);
+		ft_putnbr_fd(numb > 0 && numb <= 2147483647 ? numb : -numb, 1);
 	ret = ft_after(flags.minus, &ws, ret);
 	return (ret);
 }
