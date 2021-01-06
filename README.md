@@ -19,14 +19,14 @@
 
 ### Convertions
 | n | f | g | e |
-|---|---|---|---|
-| / | / | / | / |
+|----|----|----|----|
+| NO | NO | NO | NO |
 
 ### Flags
 
 | l | ll | h | hh | # |   | + |
-|---|---|---|---|---|---|---|
-| / | / | / | / | / | / | / |
+|----|----|----|----|----|----|----|
+| NO | NO | NO | NO | NO | NO | NO |
 
 ## Final Grade
 ![alt text](https://image.prntscr.com/image/-U6rw2XcRAysPSdUk2uGhQ.png)
