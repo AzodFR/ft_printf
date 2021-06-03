@@ -29,4 +29,4 @@
 | NO | NO | NO | NO | NO | NO | NO |
 
 ## Final Grade
-![alt text](https://image.prntscr.com/image/-U6rw2XcRAysPSdUk2uGhQ.png)
+![alt text](https://i.imgur.com/rKy0zGM.png)
